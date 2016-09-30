@@ -1,0 +1,99 @@
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFF;
+  color: #000;
+  font: bold 2em/2 Helvetica, sans-serif;
+}
+
+header {
+  height: 50vh;
+  left: 10vw;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: transform 0.3s;
+  width: 50vw;
+}
+
+.logo {
+  display: inline-block;
+}
+
+hr {
+  border: none;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.raffle {
+  background: #666;
+  border: 0.08em solid #000;
+  color: #FFF;
+  display: inline-block;
+  font: bold 1em Helvetica;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.nominees {
+  animation: rotate 12s ease-out paused;
+  height: 0;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transition: 0.5s opacity;
+  transform-origin: 0 0;
+  width: 1000px;
+}
+
+.nominees.go {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.nominees li {
+  display: block;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 70vw;
+  position: absolute;
+  top: 0;
+  transform-origin: 0 0;
+  width: 2000px;
+}
+
+.pointer {
+  display: none;
+  color: #000;
+  font-size: 3em;
+  position: fixed;
+  left: 68vw;
+  top: 50%;
+  transform: translate(-100%, -50%);
+
+}
+
+.nominees.go ~ .pointer {
+  display: block;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-168deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
